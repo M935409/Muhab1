@@ -238,84 +238,126 @@
     <section id="about" class="content">
         <section id="about" class="content">
             <h2 id="about-title">عن الجامعة</h2>
-            <p id="about-text"> كل صورة تحكي قصة علمية، كل خطوة تفتح آفاقاً جديدة</p>
-        
-       <!-- إضافة 11 صورة -->
-<div class="image-gallery">
-    <!-- الصورة في السطر الأول -->
-    <div class="image-row center-row">
-        <img src="783478تت.jpeg" alt="Image 1">
-    </div>
 
-    <!-- باقي الصور 10 صور -->
-    <div class="image-row">
-        <img src="غغغغ8.jpeg" alt="Image 2">
-        <img src="تتتككك6.jpeg" alt="Image 3">
-    </div>
-    <div class="image-row">
-        <img src="فففف999.jpeg" alt="Image 4">
-        <img src="ثثثث78.jpeg" alt="Image 5">
-    </div>
-    <div class="image-row">
-        <img src="ففللتتنن.jpeg" alt="Image 6">
-        <img src="7286238562.jpeg" alt="Image 7">
-    </div>
-    <div class="image-row">
-        <img src="999777666.jpeg" alt="Image 8">
-        <img src="44444.jpeg" alt="Image 9"> 
-    </div>
-    <div class="image-row">
-        <img src="11115.jpeg" alt="Image 10">
-        <img src="ننتت.jpeg" alt="Image 11">
-    </div>
-</div>
-
-<style>
-    .image-gallery {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px; /* زيادة التباعد بين الصور */
-        justify-content: center;
-    }
-
-    .image-row {
-        display: flex;
-        justify-content: center;
-        gap: 20px; /* تباعد بين الصور داخل السطر */
-        margin-bottom: 20px; /* تباعد بين الأسطر */
-        width: 100%;
-    }
-
-    .image-row img {
-        width: 200px;
-        height: 150px;
-        object-fit: cover;
-        border-radius: 8px;
-    }
-
-    /* تنسيق الصورة في السطر الأول بحيث تكون في المنتصف */
-    .center-row {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        margin-bottom: 20px; /* لإضافة تباعد بين الصورة في السطر الأول وبقية الصور */
-    }
-
-    /* تحسين التوافق مع الجوال */
-    @media (max-width: 768px) {
-        .image-row img {
-            width: 100px;
-            height: 100px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .image-row img {
-            width: 80px;
-            height: 80px;
-        }
-    }
-</style>
+            <style>
+                @keyframes waveEffect {
+                    0% { background-position: 100% 50%; }
+                    100% { background-position: -100% 50%; }
+                }
+            
+                #about-title {
+                    font-size: 32px;
+                    font-weight: bold;
+                    text-align: center;
+                    background: linear-gradient(90deg, blue 0%, blue 45%, white 50%, blue 55%, blue 100%);
+                    background-size: 200% 100%;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    color: transparent;
+                    animation: waveEffect 4s infinite linear;
+                }
+            </style>
+            
+            <p id="about-text">كل صورة تحكي قصة علمية، كل خطوة تفتح آفاقاً جديدة</p>
+            
+            <style>
+                #about-text {
+                    font-size: 18px;
+                    font-weight: bold;
+                    text-align: center;
+                    padding: 15px 25px; /* إضافة مساحة داخلية للصندوق */
+                    border: 2px solid red; /* إطار أحمر */
+                    border-radius: 50px; /* يجعل الصندوق بيضاوي الشكل */
+                    display: inline-block; /* يحافظ على شكل الصندوق حول النص */
+                    color: blue; /* تحديد اللون الأزرق للنص */
+                    background: transparent; /* إزالة التدرج */
+                }
+            </style>
+            
+            <div class="image-gallery">
+                <!-- الصورة في السطر الأول -->
+                <div class="image-row center-row">
+                    <img src="783478تت.jpeg" alt="Image 1">
+                </div>
+            
+                <!-- باقي الصور 10 صور -->
+                <div class="image-row">
+                    <img src="غغغغ8.jpeg" alt="Image 2">
+                    <img src="تتتككك6.jpeg" alt="Image 3">
+                </div>
+                <div class="image-row">
+                    <img src="فففف999.jpeg" alt="Image 4">
+                    <img src="ثثثث78.jpeg" alt="Image 5">
+                </div>
+                <div class="image-row">
+                    <img src="ففللتتنن.jpeg" alt="Image 6">
+                    <img src="7286238562.jpeg" alt="Image 7">
+                </div>
+                <div class="image-row">
+                    <img src="999777666.jpeg" alt="Image 8">
+                    <img src="44444.jpeg" alt="Image 9"> 
+                </div>
+                <div class="image-row">
+                    <img src="11115.jpeg" alt="Image 10">
+                    <img src="ننتت.jpeg" alt="Image 11">
+                </div>
+            </div>
+            
+            <style>
+                .image-gallery {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    justify-content: center;
+                    padding: 10px;
+                }
+            
+                .image-row {
+                    display: flex;
+                    justify-content: center;
+                    gap: 20px;
+                    margin-bottom: 20px;
+                    width: 100%;
+                    flex-wrap: wrap;
+                }
+            
+                .image-row img {
+                    width: 300px;
+                    height: 200px;
+                    object-fit: cover;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    transition: transform 0.3s ease-in-out;
+                }
+            
+                .image-row img:hover {
+                    transform: scale(1.05);
+                }
+            
+                /* تنسيق الصورة في السطر الأول */
+                .center-row {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+            
+                /* تحسين التوافق مع الجوال */
+                @media (max-width: 768px) {
+                    .image-row img {
+                        width: 90%;
+                        height: auto;
+                    }
+                }
+            
+                @media (max-width: 480px) {
+                    .image-row img {
+                        width: 95%;
+                        height: auto;
+                    }
+                }
+            </style>
+            
         
     <script>
         function toggleMenu() {
