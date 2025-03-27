@@ -322,14 +322,13 @@
                         margin: 0;
                         padding: 0;
                         text-align: center;
-                        overflow-x: hidden; /* منع التمرير الأفقي */
+                        overflow-x: hidden;
                     }
             
                     .image-gallery {
                         display: flex;
-                        flex-wrap: wrap;
-                        gap: 25px;
-                        justify-content: center;
+                        flex-direction: column;
+                        align-items: center;
                         padding: 20px;
                     }
             
@@ -339,13 +338,15 @@
                         gap: 25px;
                         margin-bottom: 25px;
                         width: 100%;
-                        flex-wrap: wrap;
+                        flex-wrap: nowrap; /* منع الصور من التكدس عموديًا */
+                        overflow-x: auto; /* تمكين التمرير الأفقي عند الحاجة */
                         opacity: 0;
                         transform: translateY(50px);
                         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
                     }
             
                     .image-row img {
+                        flex-shrink: 0; /* منع تصغير الصور */
                         width: 300px;
                         height: 200px;
                         object-fit: cover;
@@ -363,31 +364,15 @@
                         transform: translateY(0);
                     }
             
-                    @media (max-width: 768px) {
-                        .image-row img {
-                            width: 85%;
-                            height: auto;
-                        }
-                    }
-            
-                    @media (max-width: 480px) {
-                        .image-row img {
-                            width: 90%;
-                            height: auto;
-                        }
-                    }
-            
-                    /* الفاصل العريض بين الصور والزر */
                     .separator {
                         width: 100%;
                         height: 5px;
                         background: linear-gradient(to right, #ff6347, #1e90ff);
                         margin-top: 30px;
                         margin-bottom: 30px;
-                        animation: wave 1s ease-out infinite; /* إضافة تأثير الحركة */
+                        animation: wave 1s ease-out infinite;
                     }
             
-                    /* تأثير انميشن للموقع */
                     @keyframes wave {
                         0% {
                             transform: scaleX(1);
@@ -400,7 +385,6 @@
                         }
                     }
             
-                    /* تصميم الأزرار */
                     .buttons-container {
                         display: flex;
                         justify-content: center;
@@ -420,7 +404,7 @@
                         border-radius: 50px;
                         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
                         transition: transform 0.3s ease, background-color 0.3s ease;
-                        animation: bounce 1s ease infinite; /* تأثير الانميشن هنا */
+                        animation: bounce 1s ease infinite;
                     }
             
                     .location-button:hover, .whatsapp-button:hover {
@@ -428,24 +412,6 @@
                         transform: scale(1.05);
                     }
             
-                    .location-button:before, .whatsapp-button:before {
-                        position: absolute;
-                        left: 10px; /* تقليل المسافة بين الأيقونة وحدود الزر */
-                        top: 50%;
-                        transform: translateY(-50%);
-                        width: 20px;
-                        height: 20px;
-                    }
-            
-                    .location-button, .whatsapp-button {
-                        padding-left: 35px; /* زيادة المسافة بين الأيقونة والنص */
-                    }
-            
-                    .whatsapp-button:before {
-                        content: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg');
-                    }
-            
-                    /* تأثير انميشن الزر (تأثير حركة) */
                     @keyframes bounce {
                         0% {
                             transform: translateY(0);
@@ -458,14 +424,20 @@
                         }
                     }
             
-                    /* تصميم نص المصمم */
-                    .designer-name {
+                    footer {
+                        text-align: center;
+                        margin-top: 20px;
                         font-size: 16px;
-                        margin-top: 10px;
-                        color: #333;
+                        color: white;
+                        background-color: #007BFF;
+                        padding: 10px 20px;
+                        border-radius: 30px;
+                        width: fit-content;
+                        margin-left: auto;
+                        margin-right: auto;
+                        animation: moveShake 2s ease-in-out infinite;
                     }
             
-                    /* إضافة تأثير تحرك وتشقق عبر CSS */
                     @keyframes moveShake {
                         0% {
                             transform: translateX(0) rotate(0deg);
@@ -482,21 +454,6 @@
                         100% {
                             transform: translateX(0) rotate(0deg);
                         }
-                    }
-            
-                    footer {
-                        text-align: center;
-                        margin-top: 20px;
-                        font-family: 'Cairo', sans-serif;
-                        font-size: 16px;
-                        color: white;
-                        background-color: #007BFF;
-                        padding: 10px 20px;
-                        border-radius: 30px;
-                        width: fit-content;
-                        margin-left: auto;
-                        margin-right: auto;
-                        animation: moveShake 2s ease-in-out infinite;
                     }
                 </style>
             </head>
@@ -534,6 +491,10 @@
                 </div>
             
                 <div class="separator"></div>
+            
+            </body>
+            </html>
+            
             
                 <!-- الأزرار -->
                 <div class="buttons-container">
