@@ -362,18 +362,34 @@
         }
 
         @media (max-width: 768px) {
-            .image-row img {
-                width: 85%;
-                height: auto;
-            }
-        }
+    .image-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-        @media (max-width: 480px) {
-            .image-row img {
-                width: 90%;
-                height: auto;
-            }
-        }
+    .image-row img {
+        width: 48%; /* يجعل كل صورتين بجانب بعض */
+        height: auto;
+        max-height: 200px;
+        object-fit: cover; /* يضمن عدم قص الصور */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .image-row img {
+        width: 48%; /* يجعل كل صورتين بجانب بعض حتى على الجوالات الصغيرة */
+        max-height: 180px;
+        object-fit: cover; /* يمنع القص */
+    }
+}
+
 
         /* الفاصل العريض بين الصور والزر */
         .separator {
