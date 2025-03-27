@@ -272,7 +272,7 @@
     </section>
     <section id="about" class="content">
         <section id="about" class="content">
-            <h2 id="about-title">عن الجامعة</h2>
+            <h2 id="about-title">عن الجامعة </h2>
 
             <style>
                 @keyframes waveEffect {
@@ -362,18 +362,27 @@
         }
 
         @media (max-width: 768px) {
-            .image-row img {
-                width: 85%;
-                height: auto;
-            }
-        }
+    .image-row {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-        @media (max-width: 480px) {
-            .image-row img {
-                width: 90%;
-                height: auto;
-            }
-        }
+    .image-row img {
+        width: 48%; /* يجعل كل صورتين بجانب بعض */
+        height: auto;
+        max-height: 200px; /* يمنع الصور من أن تصبح كبيرة جدًا */
+        object-fit: contain; /* يضمن أن الصورة لا تُقص */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-row img {
+        width: 100%; /* يجعل كل صورة تأخذ عرض الشاشة على الجوالات الصغيرة */
+        max-height: 180px; /* يضمن أن الصور لا تصبح طويلة جدًا */
+        object-fit: contain; /* يحافظ على تناسق الصورة دون قص */
+    }
+}
+
 
         /* الفاصل العريض بين الصور والزر */
         .separator {
@@ -678,6 +687,8 @@
         إرسال الإشعار عبر واتساب
     </a>
 </div>
+
+<div class="separator"></div>
 
 <div class="buttons-container">
     <!-- زر الموقع مع أيقونة خريطة -->
