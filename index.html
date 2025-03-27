@@ -559,163 +559,230 @@
     <div class="separator"></div>
 
     <!DOCTYPE html>
-    <html lang="ar">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>معلومات الحساب</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f4;
-                margin: 0;
-                padding: 0;
-                text-align: center;
-            }
-    
-            .account-info {
-                background-color: #1e90ff;
-                color: white;
-                border-radius: 10px;
-                padding: 20px;
-                margin-top: 50px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                width: 80%;
-                margin-left: auto;
-                margin-right: auto;
-                max-width: 600px;
-            }
-    
-            .account-info h2 {
-                margin-bottom: 20px;
-                color: white;
-            }
-    
-            .account-info p {
-                font-size: 18px;
-                color: white;
-            }
-    
-            .separator {
-                width: 100%;
-                height: 5px;
-                background: linear-gradient(to right, #ff6347, #1e90ff);
-                margin-top: 30px;
-                margin-bottom: 30px;
-                animation: wave 1s ease-out infinite;
-            }
-    
-            @keyframes wave {
-                0% {
-                    transform: scaleX(1);
-                }
-                50% {
-                    transform: scaleX(1.2);
-                }
-                100% {
-                    transform: scaleX(1);
-                }
-            }
-    
-            .separator-text {
-                font-size: 20px;
-                color: #333;
-                margin-top: 10px;
-            }
-    
-            .note {
-                font-size: 18px;
-                color: white;
-                margin-top: 20px;
-                background-color: #333;
-                padding: 15px;
-                border-radius: 8px;
-                text-align: right;
-                line-height: 1.8;
-            }
-    
-            .whatsapp-link {
-                margin-top: 20px;
-                display: block;
-                color: white;
-                background-color: #25d366;
-                padding: 10px;
-                text-decoration: none;
-                border-radius: 5px;
-                font-size: 18px;
-                width: 80%;
-                max-width: 300px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-    
-            .whatsapp-link:hover {
-                background-color: #128c7e;
-            }
-    
-            /* مربع بيضاوي في الأعلى */
-            .oval-box {
-                background-color: #1e90ff;
-                color: white;
-                border-radius: 50px;
-                padding: 15px;
-                font-size: 20px;
-                width: 80%;
-                max-width: 400px;
-                margin: 30px auto;
-                text-align: center;
-            }
-        </style>
-    </head>
-    <body>
-    
-        <!-- مربع بيضاوي في الأعلى -->
-        <div class="oval-box">
-            تفاصيل حساب بنك الخرطوم لتسديد رسوم الطلاب للفصول الدراسية
-        </div>
-    
-       
-    
-       
-        <!-- حساب البنك -->
-<div class="account-info">
-    <h2>معلومات حساب بنك الخرطوم</h2>
-    <p><strong>اسم العميل : </strong>مهاب طارق رجب عبدالله</p>
-    <p><strong>رقم الحساب : </strong> 4081619</p>
-    <p><strong style="font-size: 22px;">: ملاحظة</strong></p>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معلومات الحساب</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
 
-    <div class="note">
-          في خانة التعليق، يرجى كتابة اسمك رباعي، اسم التخصص، الدفعة، ومشاركة صورة من الإشعار الأبيض فقط<br><br>
-       لإرسال الإشعار، يرجى الضغط على زر إرسال الإشعار عبر واتساب
+        .account-info {
+            background-color: #1e90ff;
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 600px;
+        }
+
+        .account-info h2 {
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .account-info p {
+            font-size: 18px;
+            color: white;
+        }
+
+        .separator {
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #ff6347, #1e90ff);
+            margin-top: 30px;
+            margin-bottom: 30px;
+            animation: wave 1s ease-out infinite;
+        }
+
+        @keyframes wave {
+            0% {
+                transform: scaleX(1);
+            }
+            50% {
+                transform: scaleX(1.2);
+            }
+            100% {
+                transform: scaleX(1);
+            }
+        }
+
+        .note {
+            font-size: 18px;
+            color: white;
+            margin-top: 20px;
+            background-color: #333;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: right;
+            line-height: 1.8;
+        }
+
+        .whatsapp-link {
+            margin-top: 20px;
+            display: block;
+            color: white;
+            background-color: #25d366;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            width: 80%;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .whatsapp-link:hover {
+            background-color: #128c7e;
+        }
+
+        /* مربع بيضاوي في الأعلى */
+        .oval-box {
+            background-color: #1e90ff;
+            color: white;
+            border-radius: 50px;
+            padding: 15px;
+            font-size: 20px;
+            width: 80%;
+            max-width: 400px;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        /* زر نسخ رقم الحساب */
+        .copy-button {
+            background-color: #ff7f00; /* اللون البرتقالي */
+            color: white;
+            padding: 8px 20px; /* زيادة العرض */
+            border-radius: 30px; /* شكل بيضاوي */
+            text-decoration: none;
+            font-size: 16px; /* تصغير الخط */
+            margin-top: 15px;
+            width: 80%;
+            max-width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+            display: inline-block;
+        }
+
+        .copy-button:hover {
+            background-color: #e67e00; /* لون أغمق عند المرور بالماوس */
+        }
+
+        /* الرسالة المنبثقة */
+        .popup-message {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ff7f00; /* اللون البرتقالي */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            z-index: 1000;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- مربع بيضاوي في الأعلى -->
+    <div class="oval-box">
+        تفاصيل حساب بنك الخرطوم لتسديد رسوم الطلاب للفصول الدراسية
     </div>
-    
 
-    <!-- رابط واتساب ثابت -->
-    <a href="https://wa.me/+966561860920?text=أريد%20إرسال%20إشعار%20التحويل" class="whatsapp-link" target="_blank">
-        إرسال الإشعار عبر واتساب
-    </a>
-</div>
+    <!-- حساب البنك -->
+    <div class="account-info">
+        <h2>معلومات حساب بنك الخرطوم</h2>
+        <p><strong>اسم العميل : </strong>مهاب طارق رجب عبدالله</p>
+        <p><strong>رقم الحساب : </strong><span id="account-number">4081619</span></p>
+        
+        <button class="copy-button" onclick="copyAccountNumber()">نسخ رقم الحساب</button>
 
-<div class="separator"></div>
+        <p><strong style="font-size: 22px;">: ملاحظة</strong></p>
 
-<div class="buttons-container">
-    <!-- زر الموقع مع أيقونة خريطة -->
-    <a href="https://maps.app.goo.gl/wUthuMkYubB6xV3e6" class="location-button">
-        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" 
-            alt="خريطة" 
-            style="width: 20px; height: 20px; margin-right: 10px;">
-        زيارة موقع الجامعة
-    </a>
+        <div class="note">
+            في خانة التعليق، يرجى كتابة اسمك رباعي، اسم التخصص، الدفعة، ومشاركة صورة من الإشعار الأبيض فقط<br><br>
+            لإرسال الإشعار، يرجى الضغط على زر إرسال الإشعار عبر واتساب
+        </div>
 
-    <!-- زر تواصل عبر الواتساب -->
-    <a href="https://wa.me/+249902520425" class="whatsapp-button">
-        للإستفسار عن هذه الصفحة
-    </a>
-</div>
+        <!-- رابط واتساب ثابت -->
+        <a href="https://wa.me/+966561860920?text=أريد%20إرسال%20إشعار%20التحويل" class="whatsapp-link" target="_blank">
+            إرسال الإشعار عبر واتساب
+        </a>
+    </div>
 
-<footer>
-    تم تصميم صفحة الويب هذه بواسطة مهاب
-</footer>
+    <div class="separator"></div>
+
+    <div class="buttons-container">
+        <!-- زر الموقع مع أيقونة خريطة -->
+        <a href="https://maps.app.goo.gl/wUthuMkYubB6xV3e6" class="location-button">
+            <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" 
+                alt="خريطة" 
+                style="width: 20px; height: 20px; margin-right: 10px;">
+            زيارة موقع الجامعة
+        </a>
+
+        <!-- زر تواصل عبر الواتساب -->
+        <a href="https://wa.me/+249902520425" class="whatsapp-button">
+            للإستفسار عن هذه الصفحة
+        </a>
+    </div>
+
+    <footer>
+        تم تصميم صفحة الويب هذه بواسطة مهاب
+    </footer>
+
+    <!-- الرسالة المنبثقة -->
+    <div class="popup-message" id="popupMessage">
+        تم نسخ رقم الحساب بنجاح!
+    </div>
+
+    <script>
+        // دالة لنسخ رقم الحساب
+        function copyAccountNumber() {
+            const accountNumber = document.getElementById("account-number").innerText;
+            navigator.clipboard.writeText(accountNumber)
+                .then(() => {
+                    // عرض الرسالة المنبثقة
+                    const popup = document.getElementById("popupMessage");
+                    popup.style.display = "block";
+
+                    // إخفاء الرسالة بعد 3 ثواني
+                    setTimeout(() => {
+                        popup.style.display = "none";
+                    }, 3000);
+                })
+                .catch((error) => {
+                    alert("فشل في نسخ الرقم. حاول مرة أخرى.");
+                });
+        }
+    </script>
+
+</body>
+</html>
 
 <script>
     function revealImages() {
