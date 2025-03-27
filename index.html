@@ -210,18 +210,48 @@
         .sidebar button:nth-child(3) {
             margin-top: 20px;
         }
+
+        /* تأثير الموجة على النص */
+        @keyframes waveEffect {
+            0% { background-position: 100% 50%; }
+            100% { background-position: -100% 50%; }
+        }
+
+        /* تعديل عنوان الجامعة ليكون داخل مربع بيضاوي */
+        #title {
+            background-color: transparent;
+            border: 2px solid white; /* إطار أبيض */
+            padding: 10px 20px;
+            border-radius: 50px; /* شكل بيضاوي */
+            display: inline-block;
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            background: linear-gradient(90deg, white 0%, white 45%, blue 50%, white 55%, white 100%);
+            background-size: 200% 100%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: waveEffect 4s infinite linear;
+        }
     </style>
 </head>
 <body>
     <div class="sidebar" id="sidebar">
-        <button class="close-btn" onclick="closeMenu()">&#10006; إغلاق</button>
-        <button class="lang-btn" onclick="toggleLanguage()"> E / تغيير اللغة ع</button>
-        <button class="theme-btn" onclick="toggleDarkMode()">تغيير الوضع</button>
+        <button class="close-btn" onclick="closeMenu()">&#10006; إغلاق النافذة (Close Window)</button>
+        <button class="lang-btn" onclick="toggleLanguage()">اللغات (Languages)</button>
+        <button class="theme-btn" onclick="toggleDarkMode()">الوضع (Mode)</button>
     </div>
     <header>
         <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
         <h1 id="title">جامعة ود مدني للعلوم الطبية والتكنولوجيا</h1>
     </header>
+</body>
+</html>
+
+</body>
+</html>
+
     <section class="hero">
         <h2 id="welcome">مرحبًا بكم في جامعة ود مدني للعلوم الطبية والتكنولوجيا</h2>
         <p id="description">.نركز على دمج التعليم الطبي مع التكنولوجيا الحديثة لتحضير أطباء قادرين على مواكبة تطورات الطب والتكنولوجيا</p>
