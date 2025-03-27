@@ -310,204 +310,223 @@
             </style>
             
             <!DOCTYPE html>
-            <html lang="ar">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>معرض الصور</title>
-                <style>
-                    body {
-                        font-family: Arial, sans-serif;
-                        background-color: #f4f4f4;
-                        margin: 0;
-                        padding: 0;
-                        text-align: center;
-                        overflow-x: hidden; /* منع التمرير الأفقي */
-                    }
-            
-                    .image-gallery {
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: 25px;
-                        justify-content: center;
-                        padding: 20px;
-                    }
-            
-                    .image-row {
-                        display: flex;
-                        justify-content: center;
-                        gap: 25px;
-                        margin-bottom: 25px;
-                        width: 100%;
-                        flex-wrap: wrap;
-                        opacity: 0;
-                        transform: translateY(50px);
-                        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-                    }
-            
-                    .image-row img {
-                        width: 300px;
-                        height: 200px;
-                        object-fit: cover;
-                        border-radius: 12px;
-                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                        transition: transform 0.3s ease-in-out;
-                    }
-            
-                    .image-row img:hover {
-                        transform: scale(1.05);
-                    }
-            
-                    .image-row.show {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-            
-                    @media (max-width: 768px) {
-                        .image-row img {
-                            width: 85%;
-                            height: auto;
-                        }
-                    }
-            
-                    @media (max-width: 480px) {
-                        .image-row img {
-                            width: 90%;
-                            height: auto;
-                        }
-                    }
-            
-                    /* الفاصل العريض بين الصور والزر */
-                    .separator {
-                        width: 100%;
-                        height: 5px;
-                        background: linear-gradient(to right, #ff6347, #1e90ff);
-                        margin-top: 30px;
-                        margin-bottom: 30px;
-                        animation: wave 1s ease-out infinite; /* إضافة تأثير الحركة */
-                    }
-            
-                    /* تأثير انميشن للموقع */
-                    @keyframes wave {
-                        0% {
-                            transform: scaleX(1);
-                        }
-                        50% {
-                            transform: scaleX(1.2);
-                        }
-                        100% {
-                            transform: scaleX(1);
-                        }
-                    }
-            
-                    /* تصميم الزر */
-                    .location-button {
-                        position: relative;
-                        display: inline-block;
-                        background-color: #1e90ff;
-                        color: white;
-                        padding: 15px 25px;
-                        font-size: 16px;
-                        font-weight: bold;
-                        text-align: center;
-                        text-decoration: none;
-                        border-radius: 50px;
-                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-                        transition: transform 0.3s ease, background-color 0.3s ease;
-                        animation: bounce 1s ease infinite; /* تأثير الانميشن هنا */
-                    }
-            
-                    .location-button:hover {
-                        background-color: #ff6347;
-                        transform: scale(1.1);
-                    }
-            
-                    .location-button:before {
-                        content: url('https://upload.wikimedia.org/wikipedia/commons/a/a7/Map_pin_icon.svg');
-                        position: absolute;
-                        left: 15px;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        width: 20px;
-                        height: 20px;
-                    }
-            
-                    /* تأثير انميشن الزر (تأثير حركة) */
-                    @keyframes bounce {
-                        0% {
-                            transform: translateY(0);
-                        }
-                        50% {
-                            transform: translateY(-10px);
-                        }
-                        100% {
-                            transform: translateY(0);
-                        }
-                    }
-            
-                </style>
-            </head>
-            <body>
-            
-                <div class="image-gallery">
-                    <div class="image-row">
-                        <img src="783478تت.jpeg" alt="Image 1">
-                    </div>
-            
-                    <div class="image-row">
-                        <img src="غغغغ8.jpeg" alt="Image 2">
-                        <img src="تتتككك6.jpeg" alt="Image 3">
-                    </div>
-                    
-                    <div class="image-row">
-                        <img src="فففف999.jpeg" alt="Image 4">
-                        <img src="ثثثث78.jpeg" alt="Image 5">
-                    </div>
-                    
-                    <div class="image-row">
-                        <img src="ففللتتنن.jpeg" alt="Image 6">
-                        <img src="7286238562.jpeg" alt="Image 7">
-                    </div>
-                    
-                    <div class="image-row">
-                        <img src="999777666.jpeg" alt="Image 8">
-                        <img src="44444.jpeg" alt="Image 9">
-                    </div>
-                    
-                    <div class="image-row">
-                        <img src="11115.jpeg" alt="Image 10">
-                        <img src="ننتت.jpeg" alt="Image 11">
-                    </div>
-                </div>
-            
-                <div class="separator"></div>
-            
-                <!-- زر الموقع -->
-                <a href="https://maps.app.goo.gl/wUthuMkYubB6xV3e6" class="location-button">
-                    📍 زيارة الموقع
-                </a>
-            
-                <script>
-                    function revealImages() {
-                        let rows = document.querySelectorAll('.image-row');
-            
-                        rows.forEach(row => {
-                            let windowHeight = window.innerHeight;
-                            let elementTop = row.getBoundingClientRect().top;
-                            let revealPoint = 100;
-            
-                            if (elementTop < windowHeight - revealPoint) {
-                                row.classList.add("show");
-                            }
-                        });
-                    }
-            
-                    window.addEventListener("scroll", revealImages);
-                    revealImages();
-                </script>
-            
-            </body>
-            </html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض الصور</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden; /* منع التمرير الأفقي */
+        }
+
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 25px;
+            width: 100%;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .image-row img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-row img:hover {
+            transform: scale(1.05);
+        }
+
+        .image-row.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .image-row img {
+                width: 85%;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-row img {
+                width: 90%;
+                height: auto;
+            }
+        }
+
+        /* الفاصل العريض بين الصور والزر */
+        .separator {
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #ff6347, #1e90ff);
+            margin-top: 30px;
+            margin-bottom: 30px;
+            animation: wave 1s ease-out infinite; /* إضافة تأثير الحركة */
+        }
+
+        /* تأثير انميشن للموقع */
+        @keyframes wave {
+            0% {
+                transform: scaleX(1);
+            }
+            50% {
+                transform: scaleX(1.2);
+            }
+            100% {
+                transform: scaleX(1);
+            }
+        }
+
+        /* تصميم الزر */
+        .location-button, .whatsapp-button {
+            position: relative;
+            display: inline-block;
+            background-color: #1e90ff;
+            color: white;
+            padding: 15px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            animation: bounce 1s ease infinite; /* تأثير الانميشن هنا */
+            margin-top: 20px; /* المسافة بين الأزرار */
+        }
+
+        .location-button:hover, .whatsapp-button:hover {
+            background-color: #ff6347;
+            transform: scale(1.1);
+        }
+
+        .location-button:before, .whatsapp-button:before {
+    position: absolute;
+    left: 10px; /* تقليل المسافة بين الأيقونة وحدود الزر */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}
+
+.location-button, .whatsapp-button {
+    padding-left: 40px; /* زيادة المسافة بين الأيقونة والنص */
+}
+
+.whatsapp-button:before {
+    content: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg');
+}
+
+
+        .whatsapp-button:before {
+            content: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg');
+        }
+
+        /* تأثير انميشن الزر (تأثير حركة) */
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="image-gallery">
+        <div class="image-row">
+            <img src="783478تت.jpeg" alt="Image 1">
+        </div>
+
+        <div class="image-row">
+            <img src="غغغغ8.jpeg" alt="Image 2">
+            <img src="تتتككك6.jpeg" alt="Image 3">
+        </div>
+        
+        <div class="image-row">
+            <img src="فففف999.jpeg" alt="Image 4">
+            <img src="ثثثث78.jpeg" alt="Image 5">
+        </div>
+        
+        <div class="image-row">
+            <img src="ففللتتنن.jpeg" alt="Image 6">
+            <img src="7286238562.jpeg" alt="Image 7">
+        </div>
+        
+        <div class="image-row">
+            <img src="999777666.jpeg" alt="Image 8">
+            <img src="44444.jpeg" alt="Image 9">
+        </div>
+        
+        <div class="image-row">
+            <img src="11115.jpeg" alt="Image 10">
+            <img src="ننتت.jpeg" alt="Image 11">
+        </div>
+    </div>
+
+    <div class="separator"></div>
+
+    <!-- زر الموقع -->
+    <a href="https://maps.app.goo.gl/wUthuMkYubB6xV3e6" class="location-button">
+        📍 زيارة الموقع
+    </a>
+
+   <!-- زر تواصل عبر الواتساب -->
+<a href="https://wa.me/+966561860920" class="whatsapp-button">
+    تواصل عبر الواتساب
+</a>
+
+    <script>
+        function revealImages() {
+            let rows = document.querySelectorAll('.image-row');
+
+            rows.forEach(row => {
+                let windowHeight = window.innerHeight;
+                let elementTop = row.getBoundingClientRect().top;
+                let revealPoint = 100;
+
+                if (elementTop < windowHeight - revealPoint) {
+                    row.classList.add("show");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", revealImages);
+        revealImages();
+    </script>
+
+</body>
+</html>
+
             
             
             
