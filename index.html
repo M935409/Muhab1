@@ -274,97 +274,131 @@
                 }
             </style>
             
-            <div class="image-gallery">
-                <!-- الصورة في السطر الأول -->
-                <div class="image-row center-row">
-                    <img src="783478تت.jpeg" alt="Image 1">
-                </div>
-            
-                <!-- باقي الصور 10 صور -->
-                <div class="image-row">
-                    <img src="غغغغ8.jpeg" alt="Image 2">
-                    <img src="تتتككك6.jpeg" alt="Image 3">
-                </div>
-                <div class="image-row">
-                    <img src="فففف999.jpeg" alt="Image 4">
-                    <img src="ثثثث78.jpeg" alt="Image 5">
-                </div>
-                <div class="image-row">
-                    <img src="ففللتتنن.jpeg" alt="Image 6">
-                    <img src="7286238562.jpeg" alt="Image 7">
-                </div>
-                <div class="image-row">
-                    <img src="999777666.jpeg" alt="Image 8">
-                    <img src="44444.jpeg" alt="Image 9"> 
-                </div>
-                <div class="image-row">
-                    <img src="11115.jpeg" alt="Image 10">
-                    <img src="ننتت.jpeg" alt="Image 11">
-                </div>
-            </div>
-            
-            <style>
-                .image-gallery {
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 25px; /* زيادة المسافة بين الصور */
-                    justify-content: center;
-                    padding: 10px;
+            <!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض الصور</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 25px;
+            width: 100%;
+            flex-wrap: wrap;
+            opacity: 0; /* إخفاء الصور مبدئيًا */
+            transform: translateY(50px); /* جعلها تبدأ من الأسفل */
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .image-row img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-row img:hover {
+            transform: scale(1.05);
+        }
+
+        /* عندما تصل الصورة إلى الشاشة */
+        .image-row.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* تحسين التوافق مع الجوال */
+        @media (max-width: 768px) {
+            .image-row img {
+                width: 85%;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-row img {
+                width: 90%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="image-gallery">
+        <div class="image-row">
+            <img src="783478تت.jpeg" alt="Image 1">
+        </div>
+
+        <div class="image-row">
+            <img src="غغغغ8.jpeg" alt="Image 2">
+            <img src="تتتككك6.jpeg" alt="Image 3">
+        </div>
+        
+        <div class="image-row">
+            <img src="فففف999.jpeg" alt="Image 4">
+            <img src="ثثثث78.jpeg" alt="Image 5">
+        </div>
+        
+        <div class="image-row">
+            <img src="ففللتتنن.jpeg" alt="Image 6">
+            <img src="7286238562.jpeg" alt="Image 7">
+        </div>
+        
+        <div class="image-row">
+            <img src="999777666.jpeg" alt="Image 8">
+            <img src="44444.jpeg" alt="Image 9">
+        </div>
+        
+        <div class="image-row">
+            <img src="11115.jpeg" alt="Image 10">
+            <img src="ننتت.jpeg" alt="Image 11">
+        </div>
+    </div>
+
+    <script>
+        function revealImages() {
+            let rows = document.querySelectorAll('.image-row');
+
+            rows.forEach(row => {
+                let windowHeight = window.innerHeight;
+                let elementTop = row.getBoundingClientRect().top;
+                let revealPoint = 100; // المسافة قبل ظهور الصورة
+
+                if (elementTop < windowHeight - revealPoint) {
+                    row.classList.add("show");
                 }
-            
-                .image-row {
-                    display: flex;
-                    justify-content: center;
-                    gap: 25px; /* زيادة المسافة بين الصور */
-                    margin-bottom: 25px; /* زيادة المسافة بين الصفوف */
-                    width: 100%;
-                    flex-wrap: wrap;
-                }
-            
-                .image-row img {
-                    width: 300px;
-                    height: 200px;
-                    object-fit: cover;
-                    border-radius: 12px;
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                    transition: transform 0.3s ease-in-out;
-                }
-            
-                .image-row img:hover {
-                    transform: scale(1.05);
-                }
-            
-                /* تنسيق الصورة في السطر الأول */
-                .center-row {
-                    display: flex;
-                    justify-content: center;
-                    width: 100%;
-                    margin-bottom: 20px;
-                }
-            
-                /* تحسين التوافق مع الجوال */
-                @media (max-width: 768px) {
-                    .image-row {
-                        gap: 30px; /* زيادة التباعد بين الصور أكثر على الجوال */
-                        margin-bottom: 30px;
-                    }
-                    .image-row img {
-                        width: 85%; /* تصغير الصور قليلاً لتناسب الشاشة */
-                        height: auto;
-                    }
-                }
-            
-                @media (max-width: 480px) {
-                    .image-row {
-                        gap: 35px; /* زيادة التباعد بين الصور على الشاشات الأصغر */
-                        margin-bottom: 35px;
-                    }
-                    .image-row img {
-                        width: 90%;
-                        height: auto;
-                    }
-                }
-            </style>
+            });
+        }
+
+        window.addEventListener("scroll", revealImages);
+        revealImages(); // لضمان الكشف عن العناصر التي تكون في الشاشة عند التحميل
+    </script>
+
+</body>
+</html>
+
             
             
         
