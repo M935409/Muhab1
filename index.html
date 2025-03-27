@@ -307,7 +307,7 @@
                 .image-gallery {
                     display: flex;
                     flex-wrap: wrap;
-                    gap: 20px;
+                    gap: 25px; /* زيادة المسافة بين الصور */
                     justify-content: center;
                     padding: 10px;
                 }
@@ -315,8 +315,8 @@
                 .image-row {
                     display: flex;
                     justify-content: center;
-                    gap: 20px;
-                    margin-bottom: 20px;
+                    gap: 25px; /* زيادة المسافة بين الصور */
+                    margin-bottom: 25px; /* زيادة المسافة بين الصفوف */
                     width: 100%;
                     flex-wrap: wrap;
                 }
@@ -344,19 +344,28 @@
             
                 /* تحسين التوافق مع الجوال */
                 @media (max-width: 768px) {
+                    .image-row {
+                        gap: 30px; /* زيادة التباعد بين الصور أكثر على الجوال */
+                        margin-bottom: 30px;
+                    }
                     .image-row img {
-                        width: 90%;
+                        width: 85%; /* تصغير الصور قليلاً لتناسب الشاشة */
                         height: auto;
                     }
                 }
             
                 @media (max-width: 480px) {
+                    .image-row {
+                        gap: 35px; /* زيادة التباعد بين الصور على الشاشات الأصغر */
+                        margin-bottom: 35px;
+                    }
                     .image-row img {
-                        width: 95%;
+                        width: 90%;
                         height: auto;
                     }
                 }
             </style>
+            
             
         
     <script>
